@@ -4,6 +4,7 @@ import java.util.NoSuchElementException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.TestException;
@@ -16,6 +17,41 @@ public class SeleniumWrappers {
 	public SeleniumWrappers(WebDriver driver) {
 		this.driver = driver;
 	}
+	
+	
+	
+	
+	public void dragAndDrop(WebElement element, int xOffset, int yOffset) {
+		
+		Actions action =  new Actions(driver);
+		action.moveToElement(element).dragAndDropBy(element, xOffset, yOffset).perform();
+		
+		action.moveToElement(element).clickAndHold(element).moveByOffset(xOffset, yOffset).release(element).build().perform();
+		
+		
+	}
+	
+	
+	public void hoverElement(WebElement element) {
+		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		Actions action =  new Actions(driver);
+		action.moveToElement(element).perform();
+		
+	}
+	
+	
+	public boolean checkCurrentUrl(String expectedUrl) {
+		
+		if(driver.getCurrentUrl().equals(expectedUrl)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	
 	
 	
 	public void sendKeys(WebElement element, String keysToSend) {

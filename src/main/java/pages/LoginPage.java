@@ -25,7 +25,8 @@ public class LoginPage extends SeleniumWrappers {
 	@FindBy(id = "log") public WebElement usernameField;
 	@FindBy(id = "password") public WebElement passwordField;
 	@FindBy(css = "input[class='submit_button']") public WebElement submitButton; 
-	
+	@FindBy(css = "li[class='menu_user_login']") public WebElement loginPopUp;
+
 	
 	public void loginInApp(String username, String password) {
 		
