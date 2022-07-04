@@ -1,0 +1,32 @@
+12:23:18.880 [main] INFO  utils.Log - Started suite on :chrome
+12:23:21.291 [main] INFO  utils.Log - Opened URL| :https://keybooks.ro
+12:23:21.364 [main] INFO  utils.Log - +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12:23:21.364 [main] INFO  utils.Log - +++ Start test case : iframeExample2+++++++++
+12:23:21.364 [main] INFO  utils.Log - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12:23:21.368 [main] INFO  utils.Log - Start time :2022.06.30.12.23.21
+12:23:21.534 [main] INFO  utils.Log - called method click on <element>null
+12:23:23.212 [main] INFO  utils.Log - called method click on <element>null
+12:23:24.984 [main] INFO  utils.Log - called explict wait
+12:23:25.401 [main] INFO  utils.Log - moved to element
+12:23:26.312 [main] INFO  utils.Log - called method click on <element>null
+12:23:38.328 [main] INFO  utils.Log - +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12:23:38.328 [main] INFO  utils.Log - +++ End test case : iframeExample2+++++++++
+12:23:38.329 [main] INFO  utils.Log - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12:23:38.330 [main] INFO  utils.Log - End time :2022.06.30.12.23.38
+12:23:38.334 [main] INFO  utils.Log - +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12:23:38.334 [main] INFO  utils.Log - +++ Start test case : openNewTab+++++++++
+12:23:38.335 [main] INFO  utils.Log - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12:23:38.336 [main] INFO  utils.Log - Start time :2022.06.30.12.23.38
+12:23:43.387 [main] ERROR utils.Log - +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12:23:43.388 [main] ERROR utils.Log - +++ Failed test case : openNewTab+++++++++
+12:23:43.388 [main] ERROR utils.Log - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12:23:43.389 [main] ERROR utils.Log - Failed time :2022.06.30.12.23.43
+12:23:43.391 [main] ERROR utils.Log - org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.53)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Dragoss-MBP', ip: 'fe80:0:0:0:cda:670b:a10a:2421%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.53, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: /var/folders/xb/d_36sts55m9...}, goog:chromeOptions: {debuggerAddress: localhost:51746}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8dfd163f8123263c2b8a6cbc326ad0c0
+12:23:43.790 [main] INFO  utils.Log - Clsed all browser tabs

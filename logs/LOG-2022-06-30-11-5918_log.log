@@ -1,0 +1,8 @@
+11:59:18.604 [main] INFO  utils.Log - Started suite on :chrome
+11:59:21.314 [main] INFO  utils.Log - Opened URL| :https://keybooks.ro
+11:59:21.487 [main] INFO  utils.Log - called method click on <element>null
+11:59:22.655 [main] INFO  utils.Log - called method click on <element>null
+11:59:24.350 [main] INFO  utils.Log - called explict wait
+11:59:24.605 [main] INFO  utils.Log - moved to element
+11:59:25.367 [main] INFO  utils.Log - called method click on <element>null
+11:59:38.183 [main] INFO  utils.Log - Clsed all browser tabs

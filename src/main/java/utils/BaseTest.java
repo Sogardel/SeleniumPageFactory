@@ -16,7 +16,10 @@ public class BaseTest extends Driver {
 	public void setUp() {
 		
 		driver = initDriver(browser);
+		Log.info("Started suite on :" + browser);
 		driver.get(url);
+		Log.info("Opened URL| :" + url);
+
 		app =  new BasePage();
 	}
 	
@@ -24,6 +27,7 @@ public class BaseTest extends Driver {
 	public void tearDown() {
 		
 		driver.quit();
+		Log.info("Clsed all browser tabs");
 	}
 	
 

@@ -18,6 +18,17 @@ public class ContactsPage extends SeleniumWrappers {
 
 	@FindBy(css = "input[name='your-name']") public WebElement nameInput;
 	
+	@FindBy(css = "button[title='Zoom in']") public WebElement zoomIn;
+	@FindBy(css =  "button[title = 'Zoom out']") public WebElement zoomOut;
+	@FindBy(tagName = "iframe") public WebElement mapIframe;
+	
+	public void zoomMap(WebElement element) {
+		driver.switchTo().frame(mapIframe);
+		click(element);
+		click(element);
+
+	}
+	
 	
 	
 	
