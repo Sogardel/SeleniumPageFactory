@@ -28,6 +28,11 @@ public class NavMenuPage extends SeleniumWrappers{
 	
 	@FindBy(linkText = "Post Formats") public WebElement postFormatsLink;
 	
+	
+	@FindBy(css = "button[class*='search_submit']") public WebElement searchIcon;
+	@FindBy(css = "input[class='search_field']") public WebElement searchInput;
+	
+	
 	public void navigateTo(WebElement element) {
 		//element.click();
 		click(element);
