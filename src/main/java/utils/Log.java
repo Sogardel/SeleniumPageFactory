@@ -21,4 +21,5 @@ public class Log {
 	public static void error(Throwable error) {
 		Log.error(error);
 	}
+	
 }

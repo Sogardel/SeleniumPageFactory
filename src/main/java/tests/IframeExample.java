@@ -1,5 +1,5 @@
 package tests;
-
+/*
 import static org.testng.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class IframeExample extends BaseTest{
 	@Test
 	public void iframeExample2() throws InterruptedException {
 		app.navMenu.navigateTo(app.navMenu.eventsLink);
-		app.eventPage.click(app.eventPage.festivalOfOldFilmsLink);
+		//app.eventPage.click(app.eventPage.festivalOfOldFilmsLink);
 		app.singleEventPage.clickMap();
 		
 		System.out.println(driver.getWindowHandles());
@@ -67,4 +67,4 @@ public class IframeExample extends BaseTest{
 	}
 	
 	
-}
+}*/

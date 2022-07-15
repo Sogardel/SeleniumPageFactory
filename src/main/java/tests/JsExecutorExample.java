@@ -1,5 +1,5 @@
 package tests;
-
+/*
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -9,10 +9,11 @@ import org.testng.annotations.Test;
 
 import utils.BaseTest;
 
+
 public class JsExecutorExample extends BaseTest{
 	
 	
-	//@Test
+	@Test
 	public void testJs() throws InterruptedException {
 	
 		JavascriptExecutor jse =  (JavascriptExecutor)driver;
@@ -52,11 +53,20 @@ public class JsExecutorExample extends BaseTest{
 	//	+ "initMouseEvents" 
 	//			+ "dispatch");
 		
-		
 		//check if checkbox is selected
 		//1 elemenet.isSelected() --> boolean
 		//2 jse.executeScript("document.getElementById('wp-comment-cookies-consent').checked ")--> boolean
-			
+		String javaScriptHover = "var objObject = document.createEvent('MouseEvents');" +
+        "objObject.initMouseEvent('mouseover',true);" +
+        "arguments[0].dispatchEvent(objObject);";
+				
+        jse.executeScript(javaScriptHover, app.navMenu.blogLink);
+        jse.executeScript(javaScriptHover, app.navMenu.postFormatsLink);
+        jse.executeScript("arguments[0].click()", app.navMenu.postFormatsLink);
+
+
+		Thread.sleep(2000);
+
 	}
 	
 	//@Test
@@ -107,7 +117,7 @@ public class JsExecutorExample extends BaseTest{
 		jse.executeScript("window.scrollTo(0, -document.body.scrollHeight) ");
 	}
 
-	@Test
+	//@Test
 	public void testJs4() {
 		
 		JavascriptExecutor jse =  (JavascriptExecutor)driver;
@@ -125,4 +135,4 @@ public class JsExecutorExample extends BaseTest{
 	
 	
 
-}
+}*/

@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" parallel = "tests" thread-count="2" >
+   
+    <test name="Chrome test" verbose = "1">
+    <parameter name = "browser" value = "chrome" />
+        <classes>
+            <class name="tests.AnotherParalelTest" ></class>
+        </classes>
+    </test>
+    
+        <test name="Firefox test" verbose = "1" >
+    <parameter name = "browser" value = "firefox" />
+        <classes>
+            <class name="tests.LoginParalelTest" ></class>            
+        </classes>
+    </test>
+</suite>

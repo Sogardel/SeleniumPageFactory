@@ -21,6 +21,8 @@ public class Driver {
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			long id = Thread.currentThread().getId();
+			System.out.println("Chrome ---> Thread.id :" + id);
 		
 		return driver;
 		
@@ -29,6 +31,8 @@ public class Driver {
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			long id2 = Thread.currentThread().getId();
+			System.out.println("Firefox ---> Thread.id :" + id2);
 			
 		return driver;
 			

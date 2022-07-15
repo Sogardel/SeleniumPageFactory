@@ -1,7 +1,10 @@
 package utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.NoSuchElementException;
 
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,13 +15,69 @@ import org.testng.TestException;
 public class SeleniumWrappers {
 	
 	public WebDriver driver;
-	
-	
+	String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.ss.mm").format(new Date());
+
 	public SeleniumWrappers(WebDriver driver) {
 		this.driver = driver;
+
+	}
+	
+	public void waitForElement(WebElement element) {
+	//	String elemName = GetElementName.getDescription(element);
+
+		try {
+			Log.info("Called <waitForElement> on " + element  +" at :" + timestamp);
+			WebDriverWait wait = new WebDriverWait(driver, 5);
+			wait.until(ExpectedConditions.visibilityOf(element));
+			Log.info("Element " + element + " found at :" + timestamp);
+		}catch(NoSuchElementException e) {
+			Log.error("Element " + element + "not found! -->Attemtp retry :");
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, 5);
+				wait.until(ExpectedConditions.visibilityOf(element));
+			}catch(NoSuchElementException e1) {
+				Log.error("Element " + element + "not found on second retry!");
+
+			}
+			
+		}
 	}
 	
 	
+	
+	public void click(WebElement element) {
+		
+		//String elemName = GetElementName.getDescription(element);
+
+		try {
+			Log.info("called method click on <element>" + element);
+			waitForElement(element);
+			element.click();
+			
+		}catch(StaleElementReferenceException e) {
+			element.click();
+
+		}catch (Exception e) {
+			Log.error("Click method failed on " + element );
+			Log.error(e.fillInStackTrace());		}
+	}
+	
+	public void sendKeys(WebElement element, String keysToSend) {
+		//String elemName = GetElementName.getDescription(element);
+		try {
+			Log.info("called <sendKeys> on ELEMENT: < " + element + " >" + " with value :" + keysToSend );
+			waitForElementToBeDisplayed(element);
+			Log.info("called <clear> on ELEMENT: < " + element + " >");
+			element.clear();
+			element.sendKeys(keysToSend);
+			
+			
+		}catch (Exception e) {
+			Log.error("method <sendKeys> failed on element :" + element);
+			throw new TestException("Error in sending keys!");		
+		}
+	
+	}
 	
 	
 	public void dragAndDrop(WebElement element, int xOffset, int yOffset) {
@@ -57,22 +116,7 @@ public class SeleniumWrappers {
 	
 	
 	
-	public void sendKeys(WebElement element, String keysToSend) {
-		
-		try {
-			waitForElementToBeDisplayed(element);
-			element.clear();
-			element.sendKeys(keysToSend);
-			
-			
-		}catch (Exception e) {
-			//Log
-			throw new TestException("Error in sending keys!");
-			
-		}
-		
-		
-	}
+
 	
 	public void waitForElementToBeDisplayed(WebElement element) {
 		
@@ -87,20 +131,25 @@ public class SeleniumWrappers {
 		}
 		
 	}
-	
-	public void click(WebElement element) {
-		
-		try {
-			Log.info("called method click on <element>" + element.getAttribute("outterHTML"));
-			//System.out.println("Called click etc..");
-			WebDriverWait wait = new WebDriverWait(driver, 10);
-			wait.until(ExpectedConditions.elementToBeClickable(element));
-			element.click();
-			
-		}catch(Exception e) {
-			Log.error("Click method failed");
-			Log.error(e.fillInStackTrace());
-		}
-	}
 
+
+	public void click2(WebElement element, String elementName) {
+			
+			try {
+				Log.info("called method click on ELEMENT: < " + elementName + " >" );
+				//System.out.println("Called click etc..");
+				//WebDriverWait wait = new WebDriverWait(driver, 10);
+				//wait.until(ExpectedConditions.elementToBeClickable(element));
+				waitForElement(element);
+				element.click();
+				
+			}catch(Exception e) {
+				Log.error("Click method failed");
+				Log.error(e.fillInStackTrace());
+			}
+		}
+	
+	
+	
+	
 }

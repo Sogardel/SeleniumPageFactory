@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import utils.BaseTest;
-
+/*
 public class ActionsClassTests extends BaseTest{
 	
 	
@@ -88,4 +88,4 @@ public class ActionsClassTests extends BaseTest{
 	
 	
 
-}
+}*/

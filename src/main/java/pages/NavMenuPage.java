@@ -5,11 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.GetElementName;
+import utils.Name;
 import utils.SeleniumWrappers;
 
 public class NavMenuPage extends SeleniumWrappers{
 	
 	//public WebDriver driver;
+
 	
 	public NavMenuPage(WebDriver driver) {
 		//this.driver =  driver;
@@ -17,7 +20,7 @@ public class NavMenuPage extends SeleniumWrappers{
 		PageFactory.initElements(driver, this);
 	}
 	
-	// public By shopLink = By.linkText("BOOKS"); 
+	 //public By shopLink = By.linkText("BOOKS"); 
 	// driver.findElement(shoplink);
 	
 	@FindBy(linkText = "BOOKS") public WebElement shoplink;
@@ -25,10 +28,7 @@ public class NavMenuPage extends SeleniumWrappers{
 	@FindBy(css = "li[class='menu_user_login']") public WebElement loginPopUp;
 	@FindBy(linkText = "BLOG") public WebElement blogLink;
 	@FindBy(linkText =  "EVENTS") public WebElement eventsLink;
-	
 	@FindBy(linkText = "Post Formats") public WebElement postFormatsLink;
-	
-	
 	@FindBy(css = "button[class*='search_submit']") public WebElement searchIcon;
 	@FindBy(css = "input[class='search_field']") public WebElement searchInput;
 	
